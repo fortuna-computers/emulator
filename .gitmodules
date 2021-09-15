@@ -1,0 +1,12 @@
+[submodule "contrib/glfw"]
+	path = contrib/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "contrib/imgui"]
+	path = contrib/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "contrib/imgui-filebrowser"]
+	path = contrib/imgui-filebrowser
+	url = https://github.com/AirGuanZ/imgui-filebrowser.git
+[submodule "contrib/yaml-cpp"]
+	path = contrib/yaml-cpp
+	url = https://github.com/jbeder/yaml-cpp.git
