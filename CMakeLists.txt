@@ -33,23 +33,23 @@ set(SOURCES
     compiler/debug.hh compiler/debug.cc emulator/emulator.hh emulator/emulator.cc emulator/terminal.cc emulator/terminal.hh
     emulator/imagefile.cc emulator/imagefile.hh)
 
-add_executable(fortuna-2
+add_executable(fortuna-emulator
                main.cc ${SOURCES} ${GUI_SRC})
-target_link_libraries(fortuna-2
+target_link_libraries(fortuna-emulator
                       yaml-cpp stdc++fs glfw)
 
-add_executable(fortuna-2_createimage cmd/createimage.cc ${SOURCES})
-target_link_libraries(fortuna-2_createimage yaml-cpp stdc++fs)
+add_executable(fortuna-emulator_createimage cmd/createimage.cc ${SOURCES})
+target_link_libraries(fortuna-emulator_createimage yaml-cpp stdc++fs)
 
 # TESTS
 
-add_executable(fortuna-2_tests
+add_executable(fortuna-emulator_tests
                EXCLUDE_FROM_ALL
                ${SOURCES} test/testmain.cc test/projectfile_test.cc test/compiler_test.cc test/terminal_test.cc)
-target_link_libraries(fortuna-2_tests
+target_link_libraries(fortuna-emulator_tests
                       yaml-cpp stdc++fs)
 add_custom_command(
-        TARGET fortuna-2_tests
+        TARGET fortuna-emulator_tests
         COMMAND ${CMAKE_COMMAND} -E copy_directory
                 ${CMAKE_SOURCE_DIR}/test/sample
                 ${CMAKE_CURRENT_BINARY_DIR}/sample)
